@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --BACKGROUND-COLOUR: #78290fd5;
+    --TEXT-COLOR: #FFECD1;
+    --FONT-FAMILY: "Archivo Black", sans-serif;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    text-align: center;
+    background: var(--BACKGROUND-COLOUR);
+    color: var(--TEXT-COLOR);
+    font-family: var(--FONT-FAMILY);
+}
+
+ a{
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+img {
+    margin: 20px;
+    display:    block;
+    max-width: 100%;
+    height: 350px;
+}
+
+input {
+    height: 100px;
+    width: 300px;
+}
+
+button {
+    display: block;
+    margin: 20px auto; 
+    width: 10%;
+    background-color: white;
+    color: var(--BACKGROUND-COLOUR);
+    border: none;
+    padding: 10px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.3em;
+}
+
+button:hover {
+    background-color: var(--TEXT-COLOR);
+    color: var(--BACKGROUND-COLOUR);
+}
+
+.header {
+    display: flex;
+}
+
+#gallery {
+  display: flex;
+  height: fit-content;
+  justify-content: center;
+  flex-direction: row;
+  gap: 2em;
+  margin: 30px;
+  border-radius: 30px;
+}
+
+.gallery-item {
+  width: 30%;
+  display: inline-block;
+  text-align: center;
+}
+
+.gallery-item p {
+  word-wrap: break-word; 
+}
+.hero {
+    max-width: 100%;
+    background: linear-gradient(90deg, blue, red);
+    background-clip: text; /* standard */
+    display:flex;
+    flex-direction: column;
+    padding: 0;
+    justify-content:center;
+    margin: 4em;
+}
+
+
+.instructions .guide {
+    margin: 1em;
+}
+
+.instructions {
+  color: var(--TEXT-COLOR);
+    margin-bottom: 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 2em;
+    font-family: sans-serif;
+}
+
+.prompt-box {
+    
+    display: flex;
+    margin: 0 auto;
+    border-radius: 10px;
+    max-width: 500px;
+    
+}
+
+.user_input {
+  color: var(--TEXT-COLOR);
+}
+
+.prompt-box textarea {
+    width: 100%;
+}
+
+.generated-image-box {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.output-box {
+    width: 30%;
+    height: fit-content;
+    flex-direction: column;
+    margin: 0 auto;
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;  /* horizontal */
+    align-items: center;
+    background-color: var(--TEXT-COLOR);
+}
+
+#output {
+    height: auto;
+    color: var(--BACKGROUND-COLOUR);
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 30px;
+    margin: 20px;
+}
+
+footer {
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  font-size: 0.9em;
+  margin-top: 60px;
+}
+
+footer, p {
+  margin: 0;
+  color: #bbb;
+}
+
+
+/* 📱 Small devices (phones, max 600px) */
+@media screen and (max-width: 600px) {
+
+
+  .hero {
+    margin: 2em 1em;
+  }
+
+  button {
+    width: 80%;  /* buttons stretch for easier tap */
+    font-size: 1em;
+  }
+
+  input {
+    width: 90%;
+    height: 60px;
+  }
+
+  #gallery {
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    margin-right: 70px;
+  }
+
+  .gallery-item {
+    width: 100%;
+  }
+
+  .output-box {
+    flex-direction: column;
+    padding: 1em;
+    gap: 1em;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+}
+
+/* 📲 Medium devices (tablets, 601px–1024px) */
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  button {
+    width: 40%;
+  }
+
+  input {
+    width: 70%;
+    height: 80px;
+  }
+
+  #gallery {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5em;
+    margin: 20px auto;
+  }
+
+  .gallery-item {
+    width: 45%;
+    max-width: 400px;
+  }
+
+  .output-box {
+    flex-direction: column;
+    padding: 1.5em;
+    gap: 2em;
+    width:80%;
+    margin: 0 auto;
+  }
+}
+
+/* 🖥️ Large devices (desktops, 1025px and up) */
+@media screen and (min-width: 1025px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  button {
+    width: 15%;
+  }
+
+  input {
+    width: 300px;
+    height: 100px;
+  }
+
+  #gallery {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2em;
+  }
+
+  .gallery-item {
+    width: 30%;
+    max-width: 450px;
+  }
+
+  /* .output-box {
+    flex-direction: row;
+    padding: 2em;
+    gap: 3em;
+    width: 70%;
+    margin: 0 auto;
+  } */
+}
+
+
+/* 
+@media screen and (max-width: 600px) {
+
+  .hero {
+    margin: 2em 1em; 
+  }
+
+  button {
+    width: 60%;  
+
+  }
+
+  input {
+    width: 90%;
+    height: 60px;
+  }
+
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  .output-box {
+    flex-direction: column;
+    gap: 1em;
+    padding: 1em;
+  }
+}
+
+
+@media screen and (min-width: 601px) and (max-width: 1024px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .hero {
+    margin: 3em 2em;
+  }
+
+  button {
+    width: 40%;
+  }
+
+  input {
+    width: 70%;
+    height: 80px;
+  }
+  
+   img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  .output-box {
+    flex-direction: column;
+    gap: 2em;
+    padding: 1.5em;
+  }
+}
+ */
+
+
